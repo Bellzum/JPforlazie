@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JLPT 10-Minute Coach</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="topbar">
+        <div>
+          <p class="eyebrow">JLPT N3/N2</p>
+          <h1>10-Minute Japanese Coach</h1>
+        </div>
+        <div class="streak-box" aria-label="study streak">
+          <span id="streakCount">0</span>
+          <small>day streak</small>
+        </div>
+      </section>
+
+      <section class="dashboard" aria-label="study controls">
+        <div class="control-group">
+          <label for="levelSelect">Level</label>
+          <select id="levelSelect">
+            <option value="N3">N3</option>
+            <option value="N2">N2</option>
+          </select>
+        </div>
+        <div class="control-group">
+          <label for="modeSelect">Session</label>
+          <select id="modeSelect">
+            <option value="daily">Lazy 10 min</option>
+            <option value="weak">Weak points</option>
+            <option value="exam">Exam drill</option>
+          </select>
+        </div>
+        <button id="startBtn" class="primary-btn">Start</button>
+      </section>
+
+      <section class="today-panel">
+        <div>
+          <p class="eyebrow">Today focus</p>
+          <h2 id="todayTitle">Pick a level to start</h2>
+          <p id="todayDescription">
+            A short test chooses grammar and vocabulary from one category, then
+            reviews every answer with meaning and example sentences.
+          </p>
+        </div>
+        <div class="timer" aria-live="polite">
+          <span id="timerText">10:00</span>
+          <small>remaining</small>
+        </div>
+      </section>
+
+      <section class="coverage-panel" aria-label="JLPT coverage">
+        <div>
+          <p class="eyebrow">Coverage goal</p>
+          <h2 id="coverageTitle">N3 Intermediate</h2>
+          <p id="coverageFocus"></p>
+        </div>
+        <div class="coverage-grid">
+          <div class="coverage-card">
+            <span id="vocabCoverage">0 / 0</span>
+            <small id="vocabTargetText">vocabulary</small>
+          </div>
+          <div class="coverage-card">
+            <span id="grammarCoverage">0 / 0</span>
+            <small id="grammarTargetText">grammar</small>
+          </div>
+          <div class="coverage-card wide">
+            <span id="sourceCoverage">Daily announcements</span>
+            <small>reading and listening focus</small>
+          </div>
+        </div>
+      </section>
+
+      <section id="quizPanel" class="quiz-panel hidden" aria-live="polite">
+        <div class="quiz-meta">
+          <span id="questionCounter">Question 1</span>
+          <span id="categoryBadge">Category</span>
+        </div>
+        <h2 id="questionText"></h2>
+        <div id="answerList" class="answer-list"></div>
+        <div class="quiz-actions">
+          <button id="nextBtn" class="secondary-btn" disabled>Next</button>
+          <button id="finishBtn" class="ghost-btn">Finish early</button>
+        </div>
+      </section>
+
+      <section id="resultPanel" class="result-panel hidden">
+        <div class="result-header">
+          <div>
+            <p class="eyebrow">Review</p>
+            <h2 id="scoreText">Session complete</h2>
+          </div>
+          <button id="restartBtn" class="secondary-btn">New session</button>
+        </div>
+        <div id="categorySummary" class="category-summary"></div>
+        <div id="reviewList" class="review-list"></div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
