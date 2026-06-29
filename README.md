@@ -1,4 +1,4 @@
-# JLPT 10-Minute Coach Data
+# JPforlazies
 
 The editable dictionary source is CSV:
 
