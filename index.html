@@ -35,7 +35,10 @@
             <option value="exam">Exam drill</option>
           </select>
         </div>
-        <button id="startBtn" class="primary-btn">Start</button>
+        <div class="dashboard-actions">
+          <button id="startBtn" class="primary-btn">Start</button>
+          <button id="vocabBtn" class="secondary-btn" type="button">N3 → N2 Vocab</button>
+        </div>
       </section>
 
       <section class="today-panel">
@@ -98,6 +101,56 @@
         </div>
         <div id="categorySummary" class="category-summary"></div>
         <div id="reviewList" class="review-list"></div>
+      </section>
+
+      <section id="vocabPanel" class="vocab-panel hidden" aria-label="N3 to N2 vocabulary table">
+        <div class="vocab-header">
+          <div>
+            <p class="eyebrow">Meta vocabulary</p>
+            <h2>N3 → N2 Life Science Lab</h2>
+            <p>
+              Choose one PDF section, then study the same table structure from
+              the life-science laboratory extension.
+            </p>
+          </div>
+          <button id="backToCoachBtn" class="ghost-btn" type="button">Back to coach</button>
+        </div>
+
+        <div class="vocab-toolbar">
+          <div class="control-group">
+            <label for="vocabCategorySelect">PDF section</label>
+            <select id="vocabCategorySelect"></select>
+          </div>
+        </div>
+
+        <div class="vocab-stats" aria-label="vocabulary status">
+          <div>
+            <span id="vocabVisibleCount">0</span>
+            <small>table rows</small>
+          </div>
+          <div>
+            <span id="vocabCategoryCount">0</span>
+            <small>PDF sections</small>
+          </div>
+          <div>
+            <span id="vocabLevelRange">PDF</span>
+            <small>source</small>
+          </div>
+        </div>
+
+        <div class="vocab-table-wrap">
+          <table class="vocab-table">
+            <thead>
+              <tr>
+                <th>Core concept</th>
+                <th>Daily / Functional Japanese</th>
+                <th>Formal / Professional Japanese</th>
+                <th>Specialist workplace term</th>
+              </tr>
+            </thead>
+            <tbody id="vocabTableBody"></tbody>
+          </table>
+        </div>
       </section>
     </main>
 

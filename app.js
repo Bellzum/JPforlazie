@@ -6,22 +6,28 @@ const state = {
   answers: [],
   selectedAnswer: null,
   timerId: null,
-  secondsLeft: SESSION_SECONDS
+  secondsLeft: SESSION_SECONDS,
+  vocabCategory: "laboratory-experiments"
 };
 
 const appData = {
   requirements: {},
-  categories: []
+  categories: [],
+  lifeScienceVocabulary: []
 };
 
 const levelSelect = document.querySelector("#levelSelect");
 const modeSelect = document.querySelector("#modeSelect");
 const startBtn = document.querySelector("#startBtn");
+const vocabBtn = document.querySelector("#vocabBtn");
 const todayTitle = document.querySelector("#todayTitle");
 const todayDescription = document.querySelector("#todayDescription");
 const timerText = document.querySelector("#timerText");
+const todayPanel = document.querySelector(".today-panel");
+const coveragePanel = document.querySelector(".coverage-panel");
 const quizPanel = document.querySelector("#quizPanel");
 const resultPanel = document.querySelector("#resultPanel");
+const vocabPanel = document.querySelector("#vocabPanel");
 const questionCounter = document.querySelector("#questionCounter");
 const categoryBadge = document.querySelector("#categoryBadge");
 const questionText = document.querySelector("#questionText");
@@ -40,18 +46,33 @@ const vocabTargetText = document.querySelector("#vocabTargetText");
 const grammarCoverage = document.querySelector("#grammarCoverage");
 const grammarTargetText = document.querySelector("#grammarTargetText");
 const sourceCoverage = document.querySelector("#sourceCoverage");
+const backToCoachBtn = document.querySelector("#backToCoachBtn");
+const vocabCategorySelect = document.querySelector("#vocabCategorySelect");
+const vocabVisibleCount = document.querySelector("#vocabVisibleCount");
+const vocabCategoryCount = document.querySelector("#vocabCategoryCount");
+const vocabLevelRange = document.querySelector("#vocabLevelRange");
+const vocabTableBody = document.querySelector("#vocabTableBody");
 
 startBtn.disabled = true;
 
 async function loadContent() {
-  const response = await fetch("data/content.json", { cache: "no-store" });
-  if (!response.ok) {
-    throw new Error(`Could not load data/content.json: ${response.status}`);
+  const [contentResponse, vocabResponse] = await Promise.all([
+    fetch("data/content.json", { cache: "no-store" }),
+    fetch("data/life-science-vocabulary.json", { cache: "no-store" })
+  ]);
+
+  if (!contentResponse.ok) {
+    throw new Error(`Could not load data/content.json: ${contentResponse.status}`);
+  }
+  if (!vocabResponse.ok) {
+    throw new Error(`Could not load data/life-science-vocabulary.json: ${vocabResponse.status}`);
   }
 
-  const content = await response.json();
+  const content = await contentResponse.json();
+  const lifeScienceVocabulary = await vocabResponse.json();
   appData.requirements = content.requirements;
   appData.categories = content.categories;
+  appData.lifeScienceVocabulary = lifeScienceVocabulary.categories;
 }
 
 function showContentError(error) {
@@ -183,6 +204,7 @@ function shuffle(items) {
 }
 
 function startSession(forceNewCategory = false) {
+  showCoachView();
   const level = levelSelect.value;
   const mode = modeSelect.value;
   const category = forceNewCategory ? pickNextCategory(level, mode) : pickTodayCategory(level, mode);
@@ -200,6 +222,74 @@ function startSession(forceNewCategory = false) {
   resultPanel.classList.add("hidden");
   startTimer();
   renderQuestion();
+}
+
+function renderVocabularyCategoryOptions() {
+  vocabCategorySelect.replaceChildren();
+
+  appData.lifeScienceVocabulary.forEach((category) => {
+    const option = document.createElement("option");
+    option.value = category.id;
+    option.textContent = category.name;
+    vocabCategorySelect.appendChild(option);
+  });
+
+  if (!appData.lifeScienceVocabulary.some((category) => category.id === state.vocabCategory)) {
+    state.vocabCategory = appData.lifeScienceVocabulary[0]?.id || "";
+  }
+  vocabCategorySelect.value = state.vocabCategory;
+  vocabCategoryCount.textContent = appData.lifeScienceVocabulary.length;
+}
+
+function getSelectedVocabularyCategory() {
+  return appData.lifeScienceVocabulary.find((category) => category.id === state.vocabCategory);
+}
+
+function renderVocabularyTable() {
+  const category = getSelectedVocabularyCategory();
+  const items = category?.items || [];
+  vocabTableBody.replaceChildren();
+  vocabVisibleCount.textContent = items.length;
+  vocabLevelRange.textContent = category?.subtitle || "PDF";
+
+  if (!items.length) {
+    const row = document.createElement("tr");
+    row.innerHTML = '<td class="empty-state" colspan="4">No rows found for this PDF section.</td>';
+    vocabTableBody.appendChild(row);
+    return;
+  }
+
+  items.forEach((item) => {
+    const row = document.createElement("tr");
+    row.innerHTML = `
+      <td data-label="Core concept"><strong class="jp-term">${item.coreConcept}</strong></td>
+      <td data-label="Daily / Functional Japanese">${item.dailyFunctional}</td>
+      <td data-label="Formal / Professional Japanese">${item.formalProfessional}</td>
+      <td data-label="Specialist workplace term">${item.specialistWorkplace}</td>
+    `;
+    vocabTableBody.appendChild(row);
+  });
+}
+
+function showVocabularyView() {
+  clearInterval(state.timerId);
+  quizPanel.classList.add("hidden");
+  resultPanel.classList.add("hidden");
+  todayPanel.classList.add("hidden");
+  coveragePanel.classList.add("hidden");
+  vocabPanel.classList.remove("hidden");
+  renderVocabularyCategoryOptions();
+  renderVocabularyTable();
+  location.hash = "vocabulary";
+}
+
+function showCoachView() {
+  vocabPanel.classList.add("hidden");
+  todayPanel.classList.remove("hidden");
+  coveragePanel.classList.remove("hidden");
+  if (location.hash === "#vocabulary") {
+    history.replaceState(null, "", location.pathname + location.search);
+  }
 }
 
 function startTimer() {
@@ -312,6 +402,12 @@ function renderReview() {
 }
 
 startBtn.addEventListener("click", () => startSession(false));
+vocabBtn.addEventListener("click", showVocabularyView);
+backToCoachBtn.addEventListener("click", showCoachView);
+vocabCategorySelect.addEventListener("change", () => {
+  state.vocabCategory = vocabCategorySelect.value;
+  renderVocabularyTable();
+});
 nextBtn.addEventListener("click", submitCurrentAnswer);
 finishBtn.addEventListener("click", finishSession);
 restartBtn.addEventListener("click", () => startSession(true));
@@ -332,6 +428,8 @@ async function initializeApp() {
     todayDescription.textContent = initialCategory.description;
     renderCoverage(levelSelect.value);
     startBtn.disabled = false;
+    renderVocabularyCategoryOptions();
+    if (location.hash === "#vocabulary") showVocabularyView();
   } catch (error) {
     showContentError(error);
   }

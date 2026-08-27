@@ -1,0 +1,270 @@
+{
+  "categories": [
+    {
+      "id": "laboratory-experiments",
+      "name": "27. Laboratory Experiments, Sample Handling, and Quality Control",
+      "subtitle": "実験・試料操作・品質管理",
+      "items": [
+        {
+          "coreConcept": "Experiment",
+          "dailyFunctional": "実験（じっけん） experiment",
+          "formalProfessional": "試験（しけん） test / 実験条件（じっけんじょうけん） experimental condition",
+          "specialistWorkplace": "実験設計（じっけんせっけい） experimental design / 試験計画（しけんけいかく） study plan"
+        },
+        {
+          "coreConcept": "Protocol",
+          "dailyFunctional": "やり方 method",
+          "formalProfessional": "手順（てじゅん） procedure",
+          "specialistWorkplace": "実験プロトコル experimental protocol / 標準作業手順書（ひょうじゅんさぎょうてじゅんしょ） SOP"
+        },
+        {
+          "coreConcept": "Sample",
+          "dailyFunctional": "サンプル sample",
+          "formalProfessional": "試料（しりょう） sample / 検体（けんたい） specimen",
+          "specialistWorkplace": "生体試料（せいたいしりょう） biospecimen / 分析試料（ぶんせきしりょう） analytical sample"
+        },
+        {
+          "coreConcept": "Reagent",
+          "dailyFunctional": "薬品（やくひん） chemical",
+          "formalProfessional": "試薬（しやく） reagent",
+          "specialistWorkplace": "試薬調製（しやくちょうせい） reagent preparation / 標準液（ひょうじゅんえき） standard solution"
+        },
+        {
+          "coreConcept": "Solution",
+          "dailyFunctional": "液（えき） liquid",
+          "formalProfessional": "溶液（ようえき） solution / 緩衝液（かんしょうえき） buffer",
+          "specialistWorkplace": "原液（げんえき） stock solution / 作業液（さぎょうえき） working solution"
+        },
+        {
+          "coreConcept": "Dilution",
+          "dailyFunctional": "薄める（うすめる） dilute",
+          "formalProfessional": "希釈（きしゃく） dilution",
+          "specialistWorkplace": "希釈系列（きしゃくけいれつ） dilution series / 希釈倍率（きしゃくばいりつ） dilution factor"
+        },
+        {
+          "coreConcept": "Mixing",
+          "dailyFunctional": "混ぜる（まぜる） mix",
+          "formalProfessional": "混合（こんごう） mixing / 撹拌（かくはん） agitation",
+          "specialistWorkplace": "ボルテックス vortex mixing / 均一化（きんいつか） homogenization"
+        },
+        {
+          "coreConcept": "Dispensing",
+          "dailyFunctional": "分ける（わける） divide",
+          "formalProfessional": "分注（ぶんちゅう） aliquot / 注入（ちゅうにゅう） dispense",
+          "specialistWorkplace": "ピペッティング pipetting / アリコート aliquot / 分注精度（ぶんちゅうせいど） dispensing precision"
+        },
+        {
+          "coreConcept": "Incubation",
+          "dailyFunctional": "置いて待つ leave and wait",
+          "formalProfessional": "培養（ばいよう） culture / 保温（ほおん） keep warm",
+          "specialistWorkplace": "インキュベーション incubation / 培養条件（ばいようじょうけん） culture condition"
+        },
+        {
+          "coreConcept": "Centrifugation",
+          "dailyFunctional": "回す（まわす） spin",
+          "formalProfessional": "遠心（えんしん） centrifugation",
+          "specialistWorkplace": "遠心分離（えんしんぶんり） centrifugal separation / 遠心条件（えんしんじょうけん） centrifugation conditions"
+        },
+        {
+          "coreConcept": "Separation",
+          "dailyFunctional": "分ける separate",
+          "formalProfessional": "分離（ぶんり） separation / 抽出（ちゅうしゅつ） extraction",
+          "specialistWorkplace": "精製（せいせい） purification / 固相抽出（こそうちゅうしゅつ） solid-phase extraction"
+        },
+        {
+          "coreConcept": "Reaction",
+          "dailyFunctional": "反応（はんのう） reaction",
+          "formalProfessional": "反応時間（はんのうじかん） reaction time / 反応温度（はんのうおんど） reaction temperature",
+          "specialistWorkplace": "反応条件（はんのうじょうけん） reaction conditions / 反応系（はんのうけい） reaction system"
+        },
+        {
+          "coreConcept": "Control",
+          "dailyFunctional": "比べるもの comparison",
+          "formalProfessional": "対照（たいしょう） control",
+          "specialistWorkplace": "陽性対照（ようせいたいしょう） positive control / 陰性対照（いんせいたいしょう） negative control / ブランク blank"
+        },
+        {
+          "coreConcept": "Replicate",
+          "dailyFunctional": "繰り返す（くりかえす） repeat",
+          "formalProfessional": "反復（はんぷく） repetition",
+          "specialistWorkplace": "技術的反復（ぎじゅつてきはんぷく） technical replicate / 生物学的反復（せいぶつがくてきはんぷく） biological replicate"
+        },
+        {
+          "coreConcept": "Contamination",
+          "dailyFunctional": "汚れる（よごれる） become dirty",
+          "formalProfessional": "汚染（おせん） contamination",
+          "specialistWorkplace": "交差汚染（こうさおせん） cross-contamination / コンタミネーション contamination"
+        },
+        {
+          "coreConcept": "Sterility",
+          "dailyFunctional": "きれい clean",
+          "formalProfessional": "滅菌（めっきん） sterilization / 消毒（しょうどく） disinfection",
+          "specialistWorkplace": "無菌操作（むきんそうさ） aseptic technique / 清浄度（せいじょうど） cleanliness level"
+        },
+        {
+          "coreConcept": "Traceability",
+          "dailyFunctional": "記録する（きろくする） record",
+          "formalProfessional": "履歴（りれき） history / 管理番号（かんりばんごう） control ID",
+          "specialistWorkplace": "トレーサビリティ traceability / 試料追跡（しりょうついせき） sample tracking / 監査証跡（かんさしょうせき） audit trail"
+        },
+        {
+          "coreConcept": "Quality control",
+          "dailyFunctional": "確認する（かくにんする） check",
+          "formalProfessional": "品質管理（ひんしつかんり） quality control",
+          "specialistWorkplace": "QC基準 quality-control criteria / 受入基準（うけいれきじゅん） acceptance criteria / 逸脱（いつだつ） deviation"
+        },
+        {
+          "coreConcept": "Reproducibility",
+          "dailyFunctional": "同じ結果になる get the same result",
+          "formalProfessional": "再現性（さいげんせい） reproducibility",
+          "specialistWorkplace": "反復性（はんぷくせい） repeatability / 中間精度（ちゅうかんせいど） intermediate precision"
+        },
+        {
+          "coreConcept": "Safety",
+          "dailyFunctional": "安全（あんぜん） safety",
+          "formalProfessional": "安全管理（あんぜんかんり） safety management",
+          "specialistWorkplace": "バイオセーフティ biosafety / リスクアセスメント risk assessment / 廃棄物管理（はいきぶつかんり） waste management"
+        }
+      ]
+    },
+    {
+      "id": "laboratory-instruments",
+      "name": "28. Laboratory Instruments, Measurement, and Analytical Chemistry",
+      "subtitle": "分析機器・測定・分析化学",
+      "items": [
+        {
+          "coreConcept": "Measurement",
+          "dailyFunctional": "測る（はかる） measure",
+          "formalProfessional": "測定（そくてい） measurement / 計測（けいそく） measurement",
+          "specialistWorkplace": "定量（ていりょう） quantification / 定性（ていせい） qualitative analysis / 機器分析（ききぶんせき） instrumental analysis"
+        },
+        {
+          "coreConcept": "Instrument",
+          "dailyFunctional": "機械（きかい） machine",
+          "formalProfessional": "装置（そうち） device / 機器（きき） instrument",
+          "specialistWorkplace": "分析装置（ぶんせきそうち） analytical instrument / 測定系（そくていけい） measurement system"
+        },
+        {
+          "coreConcept": "Calibration",
+          "dailyFunctional": "合わせる adjust",
+          "formalProfessional": "校正（こうせい） calibration",
+          "specialistWorkplace": "キャリブレーション calibration / 校正曲線（こうせいきょくせん） calibration curve / 検量線（けんりょうせん） analytical calibration curve"
+        },
+        {
+          "coreConcept": "Standard",
+          "dailyFunctional": "基準（きじゅん） standard",
+          "formalProfessional": "標準（ひょうじゅん） standard / 標準試料（ひょうじゅんしりょう） reference sample",
+          "specialistWorkplace": "標準物質（ひょうじゅんぶっしつ） reference material / 内部標準（ないぶひょうじゅん） internal standard"
+        },
+        {
+          "coreConcept": "Accuracy",
+          "dailyFunctional": "正しい（ただしい） correct",
+          "formalProfessional": "正確さ（せいかくさ） accuracy",
+          "specialistWorkplace": "正確度（せいかくど） trueness/accuracy / バイアス bias"
+        },
+        {
+          "coreConcept": "Precision",
+          "dailyFunctional": "ばらつきが少ない low variation",
+          "formalProfessional": "精密さ（せいみつさ） precision",
+          "specialistWorkplace": "精度（せいど） precision / 変動係数（へんどうけいすう） coefficient of variation (CV)"
+        },
+        {
+          "coreConcept": "Sensitivity",
+          "dailyFunctional": "小さい変化が分かる detect small change",
+          "formalProfessional": "感度（かんど） sensitivity",
+          "specialistWorkplace": "分析感度（ぶんせきかんど） analytical sensitivity / 応答感度（おうとうかんど） response sensitivity"
+        },
+        {
+          "coreConcept": "Specificity",
+          "dailyFunctional": "見分ける（みわける） distinguish",
+          "formalProfessional": "特異性（とくいせい） specificity",
+          "specialistWorkplace": "分析特異性（ぶんせきとくいせい） analytical specificity / 選択性（せんたくせい） selectivity"
+        },
+        {
+          "coreConcept": "Detection limit",
+          "dailyFunctional": "見つけられる最小量 smallest detectable amount",
+          "formalProfessional": "検出限界（けんしゅつげんかい） detection limit",
+          "specialistWorkplace": "LOD (limit of detection) / 検出下限（けんしゅつかげん） lower detection limit"
+        },
+        {
+          "coreConcept": "Quantification limit",
+          "dailyFunctional": "測れる最小量 smallest quantifiable amount",
+          "formalProfessional": "定量限界（ていりょうげんかい） quantification limit",
+          "specialistWorkplace": "LOQ (limit of quantification) / 定量下限（ていりょうかげん） lower quantification limit"
+        },
+        {
+          "coreConcept": "Range",
+          "dailyFunctional": "範囲（はんい） range",
+          "formalProfessional": "測定範囲（そくていはんい） measurement range",
+          "specialistWorkplace": "ダイナミックレンジ dynamic range / 直線範囲（ちょくせんはんい） linear range"
+        },
+        {
+          "coreConcept": "Signal",
+          "dailyFunctional": "信号（しんごう） signal",
+          "formalProfessional": "測定信号（そくていしんごう） measurement signal",
+          "specialistWorkplace": "シグナル強度 signal intensity / S/N比（エスエヌひ） signal-to-noise ratio"
+        },
+        {
+          "coreConcept": "Noise",
+          "dailyFunctional": "ノイズ noise",
+          "formalProfessional": "雑音（ざつおん） noise / ばらつき variation",
+          "specialistWorkplace": "バックグラウンド background / ノイズ除去（じょきょ） noise reduction"
+        },
+        {
+          "coreConcept": "Baseline",
+          "dailyFunctional": "基準線（きじゅんせん） baseline",
+          "formalProfessional": "ベースライン baseline",
+          "specialistWorkplace": "ベースライン補正（ほせい） baseline correction / ドリフト drift"
+        },
+        {
+          "coreConcept": "Absorbance",
+          "dailyFunctional": "光を吸う absorb light",
+          "formalProfessional": "吸光度（きゅうこうど） absorbance",
+          "specialistWorkplace": "分光光度法（ぶんこうこうどほう） spectrophotometry / 吸収スペクトル（きゅうしゅうスペクトル） absorption spectrum"
+        },
+        {
+          "coreConcept": "Fluorescence",
+          "dailyFunctional": "光る（ひかる） emit light",
+          "formalProfessional": "蛍光（けいこう） fluorescence",
+          "specialistWorkplace": "蛍光強度（けいこうきょうど） fluorescence intensity / 蛍光測定（けいこうそくてい） fluorescence measurement"
+        },
+        {
+          "coreConcept": "Chromatography",
+          "dailyFunctional": "成分を分ける separate components",
+          "formalProfessional": "クロマトグラフィー chromatography",
+          "specialistWorkplace": "液体クロマトグラフィー（えきたい） LC / ガスクロマトグラフィー GC / 保持時間（ほじじかん） retention time"
+        },
+        {
+          "coreConcept": "Mass spectrometry",
+          "dailyFunctional": "質量（しつりょう） mass",
+          "formalProfessional": "質量分析（しつりょうぶんせき） mass spectrometry",
+          "specialistWorkplace": "質量電荷比（しつりょうでんかひ） m/z / マススペクトル mass spectrum / LC-MS/MS"
+        },
+        {
+          "coreConcept": "Microscopy",
+          "dailyFunctional": "顕微鏡（けんびきょう） microscope",
+          "formalProfessional": "顕微鏡観察（けんびきょうかんさつ） microscopy",
+          "specialistWorkplace": "蛍光顕微鏡（けいこうけんびきょう） fluorescence microscopy / 共焦点顕微鏡（きょうしょうてんけんびきょう） confocal microscopy"
+        },
+        {
+          "coreConcept": "Temperature / environment",
+          "dailyFunctional": "温度（おんど） temperature",
+          "formalProfessional": "温度管理（おんどかんり） temperature control / 湿度（しつど） humidity",
+          "specialistWorkplace": "恒温（こうおん） constant temperature / 環境モニタリング environmental monitoring"
+        },
+        {
+          "coreConcept": "Instrument maintenance",
+          "dailyFunctional": "手入れ（ていれ） maintenance",
+          "formalProfessional": "点検（てんけん） inspection / 保守（ほしゅ） maintenance",
+          "specialistWorkplace": "定期点検（ていきてんけん） periodic inspection / 予防保全（よぼうほぜん） preventive maintenance / 機器適格性評価（ききてきかくせいひょうか） equipment qualification"
+        },
+        {
+          "coreConcept": "Measurement uncertainty",
+          "dailyFunctional": "誤差（ごさ） error",
+          "formalProfessional": "測定誤差（そくていごさ） measurement error",
+          "specialistWorkplace": "測定不確かさ（そくていふたしかさ） measurement uncertainty / 系統誤差（けいとうごさ） systematic error / 偶然誤差（ぐうぜんごさ） random error"
+        }
+      ]
+    }
+  ]
+}
